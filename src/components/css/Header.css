@@ -1,0 +1,23 @@
+.Header {
+    background-color: #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    color: #fff;
+}
+
+.Header .header_logo {
+    cursor: pointer;
+}
+
+.Header .user-wrap {
+    display: flex;
+    font-size: 12px;
+}
+
+.Header .user-wrap div {
+    margin: 0 10px;
+    cursor: pointer;
+}

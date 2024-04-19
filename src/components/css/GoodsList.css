@@ -1,0 +1,23 @@
+.Goodslist {
+    display: flex;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-around;
+}
+
+.Goodslist div {
+    cursor: pointer;
+    flex: 33% 0 0;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+.Goodslist div:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.Goodslist div.tab_on {
+    background-color: #FD565F;
+    color: #fff;
+}

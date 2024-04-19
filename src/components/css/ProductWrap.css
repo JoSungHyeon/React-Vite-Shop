@@ -1,0 +1,22 @@
+.ProductWrap {
+    max-width: 1200px;
+    margin: 50px auto;   
+}
+
+.ProductWrap .product_wrap_item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ProductWrap button {
+    padding: 10px 16px;
+    background-color: #FD565F;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
