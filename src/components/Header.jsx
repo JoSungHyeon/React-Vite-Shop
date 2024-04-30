@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <header className='Header'>
-            <div className='header_logo' onClick={()=>{navigate("/")}}>SHOP</div>
+            <div className='header_logo' onClick={()=>{navigate("/")}}>BOARD SHOP</div>
             <div className='user-wrap'>
                 <div className='login' onClick={()=>{navigate("/signin")}}>로그인</div>
                 <div className='signup' onClick={()=>{navigate("/signup")}}>회원가입</div>
