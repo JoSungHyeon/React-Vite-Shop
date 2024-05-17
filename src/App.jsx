@@ -8,18 +8,19 @@ import SignUp from './page/SignUp'
 import NotFound from './page/NotFound'
 import axios from 'axios'
 
-
 export const ItemStateContext = createContext();
 export const ItemDispatchContext = createContext();
 
-
-function App() {
+function App() {  
   const [itemData, setItemData] = useState([]);
-
+  
   useEffect(()=>{
-    console.log(localStorage.getItem('watched'))
     localStorage.setItem('watched', JSON.stringify( [] ))
-    axios.get(`https://JoSungHyeon.github.io/shop-data/data1.json`).then((result)=>{ setItemData(result.data)})
+    axios.get(`https://JoSungHyeon.github.io/shop-data/data1.json`)
+    .then((result)=>{
+      setItemData(result.data)
+    });
+    
   }, []);
 
   const changeItemData = (value) => {

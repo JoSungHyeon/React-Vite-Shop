@@ -3,7 +3,11 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const DetailWrap = ({itemData}) => {
+
     const params = useParams();
+
+    console.log(itemData)
+
     useEffect(()=>{
         let outData;
         if(localStorage.getItem('watched') !== null) {

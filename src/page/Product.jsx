@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ItemStateContext } from "../App";
 import Header from "../components/Header";
 import DetailWrap from "../components/DetailWrap";
@@ -7,11 +7,12 @@ import Recent from '../components/Recent'
 
 const Product = () => {
     const itemData = useContext(ItemStateContext);
+
     return (
         <>
             <Header />
             <DetailWrap itemData={itemData}/>
-            <ItemInfo />
+            <ItemInfo itemData={itemData} />
             <Recent itemData={itemData} />
         </>
     )
