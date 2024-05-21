@@ -1,7 +1,8 @@
+import Footer from './Footer';
 import './css/ItemInfo.css'
 import { useParams } from 'react-router-dom';
 
-const ItemInfo = ({itemData}) => {
+const ItemInfo = () => {
     const params = useParams();
     return (
         <div className="ItemInfo">
@@ -11,6 +12,7 @@ const ItemInfo = ({itemData}) => {
                 <img src={`https://JoSungHyeon.github.io/shop-data/img/${Number(params.id)}-1.png`} />
                 <img src={`https://JoSungHyeon.github.io/shop-data/img/${Number(params.id)}-2.png`} />
             </div>
+            <Footer />
         </div>
     )
 }

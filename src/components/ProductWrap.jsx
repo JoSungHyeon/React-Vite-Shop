@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './css/ProductWrap.css'
 import Item from './Item';
+import Recent from './Recent';
 
 const ProductWrap = ({itemData, changeItemData}) => {
-    const [itemCount, setItemCount] = useState(2);
     const [moreCount, setMoreCount] = useState(0);
-    
+
     return (
         <div className="ProductWrap">
+            <Recent itemData={itemData} />
             <div className='product_wrap_item'>
-                {itemData.map((a, i)=> {
+                {itemData.map((a, key)=> {
                     return (
-                        <Item key={a.id} itemData={itemData[i]}/>
+                        <Item key={key} itemData={itemData[key]}/>
                     )
                 })}
             </div>
@@ -20,12 +21,11 @@ const ProductWrap = ({itemData, changeItemData}) => {
                 moreCount == 3
                 ? null
                 :<button onClick={()=>{
-                    setItemCount(itemCount + 1);
                     setMoreCount(moreCount + 1);
-                    axios.get(`https://JoSungHyeon.github.io/shop-data/data${itemCount}.json`).then((result)=>{
+                    /* axios.get(`https://JoSungHyeon.github.io/shop-data/data${itemCount}.json`).then((result)=>{
                         let copy = [...itemData, ...result.data];
                         changeItemData(copy);
-                    })
+                    }) */
                 }}>MORE</button>
             }
             

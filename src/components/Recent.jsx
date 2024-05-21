@@ -2,7 +2,7 @@ import './css/Recent.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Recent = ({itemData}) => {
+const Recent = () => {
     let [recentData, setRecentData] = useState(JSON.parse(localStorage.getItem('watched')))
 
     let navigate = useNavigate()
@@ -13,10 +13,10 @@ const Recent = ({itemData}) => {
             {   
                 localStorage.getItem('watched') === null
                 ? null
-                : recentData.map((a)=>{
+                : recentData.map((a, key)=>{
                     return(
                         <>
-                            <img onClick={()=>{navigate(`/product/${a}`)}} src={`https://JoSungHyeon.github.io/shop-data/img/${a}.png`} />
+                            <img key={key} onClick={()=>{navigate(`/product/${a}`)}} src={`https://JoSungHyeon.github.io/shop-data/img/${a}.png`} />
                         </>
                     )
                 })

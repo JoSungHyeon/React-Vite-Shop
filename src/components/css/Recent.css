@@ -4,14 +4,14 @@
     position: fixed;
     justify-content: center;
     align-items: center;
-    bottom: 20px;
+    bottom: 10%;
     right: 10px;
-    height: 300px;
-    border: 1px solid #111;
+    /* height: 300px; */
     padding: 10px;
     z-index: 999;
     border-radius: 5px;
     width: 120px;
+    background-color: #fff;
 }
 
 .Recent p {

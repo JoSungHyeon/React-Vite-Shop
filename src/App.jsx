@@ -13,26 +13,21 @@ export const ItemDispatchContext = createContext();
 
 function App() {  
   const [itemData, setItemData] = useState([]);
-  
+
   useEffect(()=>{
     localStorage.setItem('watched', JSON.stringify( [] ))
-    axios.get(`https://JoSungHyeon.github.io/shop-data/data1.json`)
+    axios.get(`https://JoSungHyeon.github.io/shop-data/data.json`)
     .then((result)=>{
       setItemData(result.data)
     });
-    
   }, []);
-
-  const changeItemData = (value) => {
-    setItemData(value);
-  };
-
+  
   return (
     <>
       <ItemStateContext.Provider value={itemData}>
         <ItemDispatchContext.Provider>
           <Routes>
-            <Route path='/' element={<Home changeItemData={changeItemData} />}></Route>
+            <Route path='/' element={<Home />}></Route>
             <Route path='/product/:id' element={<Product />}></Route>
             <Route path='/signup' element={<SignUp />}></Route>
           </Routes>

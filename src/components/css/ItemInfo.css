@@ -1,3 +1,7 @@
+.ItemInfo {
+    height: 100%;
+}
+
 .ItemInfo h5 {
     width: 100%;
     border-top: 1px solid #ccc;
@@ -9,7 +13,6 @@
 }
 
 .ItemInfo .ItemInfo_img {
-    height: 1000px;
     padding: 100px 0;
     display: flex;
     flex-direction: column;

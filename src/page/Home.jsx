@@ -1,19 +1,22 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ItemStateContext } from '../App'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import GoodsList from '../components/GoodsList'
 import ProductWrap from '../components/ProductWrap'
+import Recent from '../components/Recent'
+import Footer from '../components/Footer'
 
-const Home = ({changeItemData}) => {
-    const itemData = useContext(ItemStateContext);
-
+const Home = () => {
+    const itemData = useContext(ItemStateContext)
+    console.log(itemData)
     return (
         <>
             <Header />
             <Banner />
             <GoodsList />
-            <ProductWrap itemData={itemData} changeItemData={changeItemData} />
+            <ProductWrap itemData={itemData} />
+            <Footer />
         </>
     )
 }
