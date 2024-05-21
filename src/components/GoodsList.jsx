@@ -1,6 +1,6 @@
 import './css/GoodsList.css'
-const GoodsList = () => {
 
+const GoodsList = () => {
     return (
         <div className="Goodslist">
             <div className='tab_on'>ALL</div>
