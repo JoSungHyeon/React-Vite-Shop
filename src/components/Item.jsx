@@ -24,8 +24,9 @@ const Item = ({itemData}) => {
             className="Item"
             onClick={()=>{
             navigate(`/product/${itemData.id}`);
-            saveItem(itemData.id)
-        }}>
+            saveItem(itemData.id)}}
+            value={itemData.type}
+        >
             <img src={`https://JoSungHyeon.github.io/shop-data/img/${itemData.id}.png`} />
             <p className="item_title">{itemData.title}</p>
             <p>₩ {itemData.price.toLocaleString()}</p>

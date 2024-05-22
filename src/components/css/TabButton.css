@@ -1,0 +1,26 @@
+.Button {
+    cursor: pointer;
+    text-align: center;
+    flex: 1 0 auto;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.Button:nth-child(2) {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+/* .Button.Button_all {
+    background-color: #FD565F;
+    color: #fff;
+} */
+
+.Button.Button_on {
+    background-color: #FD565F;
+    color: #fff;
+}

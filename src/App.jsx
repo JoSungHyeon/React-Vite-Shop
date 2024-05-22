@@ -7,6 +7,7 @@ import Product from './page/Product'
 import SignUp from './page/SignUp'
 import NotFound from './page/NotFound'
 import axios from 'axios'
+import Cart from './page/Cart'
 
 export const ItemStateContext = createContext();
 export const ItemDispatchContext = createContext();
@@ -29,7 +30,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/product/:id' element={<Product />}></Route>
-            <Route path='/signup' element={<SignUp />}></Route>
+            <Route path='/cart' element={<Cart />}></Route>
           </Routes>
         </ItemDispatchContext.Provider>
       </ItemStateContext.Provider>

@@ -3,32 +3,62 @@ import axios from 'axios';
 import './css/ProductWrap.css'
 import Item from './Item';
 import Recent from './Recent';
+import TabButton from './TabButton';
 
-const ProductWrap = ({itemData, changeItemData}) => {
-    const [moreCount, setMoreCount] = useState(0);
+const ProductWrap = ({ itemData }) => {
+
+    const [ tabName, setTabName ] = useState("all");
+
+    const onClickTab = (e) => {
+        const allTab = document.querySelector(".Button_all");
+        const boardTab = document.querySelector(".Button_board");
+        const wheelTab = document.querySelector(".Button_wheel");
+        const myText = e.target.innerText;
+
+        //const allData = itemData.slice(0, 21);
+        //const boardData = itemData.slice(0, 14);
+        //const wheelData = itemData.slice(15, 21);
+        
+
+        if(myText === "ALL") {
+            allTab.classList.add("Button_on");
+            boardTab.classList.remove("Button_on");
+            wheelTab.classList.remove("Button_on");
+            setTabName("all");
+        } else if(myText === "BOARD") {
+            allTab.classList.remove("Button_on");
+            boardTab.classList.add("Button_on");
+            wheelTab.classList.remove("Button_on");
+            setTabName("board");
+        } else if(myText === "WHEEL") {
+            allTab.classList.remove("Button_on");
+            boardTab.classList.remove("Button_on");
+            wheelTab.classList.add("Button_on");
+            setTabName("wheel");
+        }
+    }
 
     return (
         <div className="ProductWrap">
             <Recent itemData={itemData} />
+            <div style={{display:"flex", flexWrap:"wrap"}}>
+                <TabButton onClick={onClickTab} text={'ALL'} type={'all'} />
+                <TabButton onClick={onClickTab} text={'BOARD'} type={'board'} />
+                <TabButton onClick={onClickTab} text={'WHEEL'} type={'wheel'} />
+            </div>
             <div className='product_wrap_item'>
                 {itemData.map((a, key)=> {
                     return (
-                        <Item key={key} itemData={itemData[key]}/>
+                        tabName === a.type
+                        ? <Item key={key} itemData={itemData[key]} />
+                        : (
+                            tabName === "all"
+                            ? <Item key={key} itemData={itemData[key]} />
+                            : null
+                        )
                     )
                 })}
             </div>
-            {
-                moreCount == 3
-                ? null
-                :<button onClick={()=>{
-                    setMoreCount(moreCount + 1);
-                    /* axios.get(`https://JoSungHyeon.github.io/shop-data/data${itemCount}.json`).then((result)=>{
-                        let copy = [...itemData, ...result.data];
-                        changeItemData(copy);
-                    }) */
-                }}>MORE</button>
-            }
-            
         </div>
     )
 }
