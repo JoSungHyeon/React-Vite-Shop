@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import './css/ProductWrap.css'
 import Item from './Item';
 import Recent from './Recent';
@@ -14,11 +13,6 @@ const ProductWrap = ({ itemData }) => {
         const boardTab = document.querySelector(".Button_board");
         const wheelTab = document.querySelector(".Button_wheel");
         const myText = e.target.innerText;
-
-        //const allData = itemData.slice(0, 21);
-        //const boardData = itemData.slice(0, 14);
-        //const wheelData = itemData.slice(15, 21);
-        
 
         if(myText === "ALL") {
             allTab.classList.add("Button_on");

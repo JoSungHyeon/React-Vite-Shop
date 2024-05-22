@@ -16,6 +16,7 @@ const Product = () => {
             <DetailWrap itemData={itemData} />
             <ItemInfo itemData={itemData} />
             <Recent itemData={itemData} />
+            <Footer />
         </>
     )
 }

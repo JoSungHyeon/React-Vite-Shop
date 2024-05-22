@@ -1,7 +1,6 @@
 import './css/DetailWrap.css'
 import { useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from "react";
-import { ItemStateContext } from "../App";
+import { useState } from "react";
 
 const DetailWrap = ({itemData}) => {
     

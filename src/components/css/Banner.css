@@ -1,12 +1,41 @@
+@font-face {
+    font-family: "NanumPenScript";
+    src: url("/NanumPenScript-Regular.ttf");
+}
+
 .Banner {
-    background-color: aquamarine;
     width: 100%;
     height: 400px;
     position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
-.Banner p {
-    color: #111;
+.Banner .Banner_img {
+    background: url(/public/banner_1.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    flex: 100% 0 0;
+    position: relative;
+}
+
+.Banner .Banner_img:nth-child(2) {
+    background: url(/public/banner_2.png) no-repeat;
+    background-size: cover; 
+}
+
+.Banner .Banner_img:nth-child(3) {
+    background: url(/public/banner_3.png) no-repeat;
+    background-size: cover; 
+}
+
+.Banner .Banner_img h1 {
+    font-family: 'NanumPenScript';
+    font-weight: normal;
+    color: #fff;
+    font-size: 5rem;
     position: absolute;
     top: 50%;
     left: 50%;

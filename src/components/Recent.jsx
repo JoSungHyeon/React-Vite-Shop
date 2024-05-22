@@ -1,9 +1,13 @@
 import './css/Recent.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Recent = () => {
     let [recentData, setRecentData] = useState(JSON.parse(localStorage.getItem('watched')))
+
+    useEffect(() => {
+        setRecentData(JSON.parse(localStorage.getItem('watched')));
+    }, [])
 
     let navigate = useNavigate()
 

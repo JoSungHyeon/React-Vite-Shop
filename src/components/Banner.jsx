@@ -3,7 +3,15 @@ import './css/Banner.css'
 const Banner = () => {
     return (
         <div className='Banner'>
-            <p>요기 배너임</p>
+            <div className='Banner_img'>
+                <h1>HELLO, MY LOADED BOARD</h1>
+            </div>
+            <div className='Banner_img'>
+                <h1>HELLO, MY LOADED BOARD</h1>
+            </div>
+            <div className='Banner_img'>
+                <h1>HELLO, MY LOADED BOARD</h1>
+            </div>
         </div>
     )
 }
