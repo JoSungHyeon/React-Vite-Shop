@@ -23,7 +23,7 @@ const DetailWrap = ({itemData}) => {
                         <h3>{itemData[params.id-1].title}</h3>
                         <h4>{itemData[params.id-1].content}</h4>
                         <p>{itemData[params.id-1].price.toLocaleString()} 원</p>
-                        <button>장바구니</button>
+                        <button>관심품목 추가</button>
                         </div>
                     : null
                 }

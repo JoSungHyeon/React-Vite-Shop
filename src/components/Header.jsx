@@ -9,7 +9,7 @@ const Header = () => {
         <header className='Header'>
             <div className='header_logo' onClick={()=>{navigate("/")}}>BOARD SHOP</div>
             <div className='user-wrap'>
-                <div className='signup' onClick={()=>{navigate("/cart")}}>장바구니</div>
+                <div className='signup' onClick={()=>{navigate("/cart")}}>관심품목</div>
             </div>
         </header>
     )

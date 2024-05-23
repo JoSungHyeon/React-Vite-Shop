@@ -34,7 +34,7 @@ const ProductWrap = ({ itemData }) => {
 
     return (
         <div className="ProductWrap">
-            <Recent itemData={itemData} />
+            {/* <Recent itemData={itemData} /> */}
             <div style={{display:"flex", flexWrap:"wrap"}}>
                 <TabButton onClick={onClickTab} text={'ALL'} type={'all'} />
                 <TabButton onClick={onClickTab} text={'BOARD'} type={'board'} />
