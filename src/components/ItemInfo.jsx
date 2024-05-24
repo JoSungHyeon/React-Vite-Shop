@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './css/ItemInfo.css'
 import { useParams } from 'react-router-dom';
+import Footer from './Footer';
 
 const ItemInfo = ({ itemData }) => {
     const params = useParams();
@@ -22,6 +23,7 @@ const ItemInfo = ({ itemData }) => {
                     : null
                 }
             </div>
+            <Footer />
         </div>
     )
 }

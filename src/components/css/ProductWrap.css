@@ -1,3 +1,7 @@
+.ProductWrap {
+    position: relative;
+}
+
 .ProductWrap .product_wrap_item {
     display: flex;
     flex-wrap: wrap;

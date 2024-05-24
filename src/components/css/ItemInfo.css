@@ -1,5 +1,6 @@
 .ItemInfo {
     height: 100%;
+    position: relative;
 }
 
 .ItemInfo h5 {

@@ -1,0 +1,51 @@
+.CartDetail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    font-size: 1.25rem;
+}
+
+.CartDetail h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.CartDetail_table {
+    border: none;
+}
+
+.CartDetail_table table {
+    width: 100%;
+    text-align: center;
+}
+
+.CartDetail_table .CartDetail_thead {
+    padding-bottom: 20px;
+    background-color: #111;
+    color: #fff;
+}
+
+.CartDetail_table .CartDetail_tbody {
+    line-height: 60px;
+}
+
+.CartDetail_table .CartDetail_count {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CartDetail_table .CartDetail_count button {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    font-size: 1.25rem;
+    line-height: 30px;
+    text-align: center;
+    border: none;
+    background-color: #ccc;
+    color: #111;
+    cursor: pointer;
+
+}

@@ -9,8 +9,8 @@ const saveItem = (itemNumber) => {
         if(outData.length == "3") {
             outData.shift();
         }
-        outData.push(itemNumber)
-        outData = new Set(outData)
+        outData.push(itemNumber);
+        outData = new Set(outData);
         outData = Array.from(outData);
         localStorage.setItem('watched', JSON.stringify(outData));
     }

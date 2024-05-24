@@ -24,12 +24,7 @@ const Recent = () => {
                         </>
                     )
                 })
-
-                //localStorage.getItem('watched')
             }
-
-
-
         </div>
     )
 }

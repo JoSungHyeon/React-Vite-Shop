@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import './css/ProductWrap.css'
+import { useState } from 'react';
 import Item from './Item';
 import Recent from './Recent';
 import TabButton from './TabButton';
+import Footer from './Footer';
 
 const ProductWrap = ({ itemData }) => {
 
@@ -53,6 +54,7 @@ const ProductWrap = ({ itemData }) => {
                     )
                 })}
             </div>
+            <Footer />
         </div>
     )
 }

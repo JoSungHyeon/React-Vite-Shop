@@ -3,15 +3,16 @@ import './css/Banner.css'
 const Banner = () => {
     let slideNum = 0;
     let x = 0;
-    let slideWrap = document.getElementById("Slide_wrap");
+    let slideWrap;
+    
     const move = () => {
+        slideWrap = document.getElementById("Slide_wrap");
         slideNum++;
         if(slideNum == 3) {
             slideNum = 0;
         }
-        x = slideWrap.clientWidth;
+        x = slideWrap.offsetWidth;
         slideWrap.style.left = -x * slideNum + 'px';
-        console.log(slideNum)
     }
 
     let timerId = setInterval(() => move(), 3000);
@@ -24,10 +25,10 @@ const Banner = () => {
                     <h1>HELLO, MY LOADED BOARD</h1>
                 </div>
                 <div className='Banner_img'>
-                    <h1>HELLO, MY LOADED BOARD</h1>
+                    <h1>INTERESING HOBBY</h1>
                 </div>
                 <div className='Banner_img'>
-                    <h1>HELLO, MY LOADED BOARD</h1>
+                    <h1>FUN BOARDING</h1>
                 </div>
             </div>
         </div>

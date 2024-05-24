@@ -3,7 +3,6 @@ import { ItemStateContext } from '../App'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import ProductWrap from '../components/ProductWrap'
-import Footer from '../components/Footer'
 
 const Home = () => {
     const itemData = useContext(ItemStateContext);
@@ -18,7 +17,6 @@ const Home = () => {
             <Header />
             <Banner />
             <ProductWrap itemData={itemData} />
-            <Footer />
         </>
     )
 }
