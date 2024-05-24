@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addCount, minusCount } from '../store/cartSlice'
 import { useEffect, useState } from 'react';
 
-
 const CartDetail = () => {
 
     let state = useSelector((state) => { return state });
