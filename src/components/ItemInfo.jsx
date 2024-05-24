@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import './css/ItemInfo.css'
 import { useParams } from 'react-router-dom';
 import Footer from './Footer';
@@ -7,7 +7,8 @@ const ItemInfo = ({ itemData }) => {
     const params = useParams();
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => setIsLoading(false), 50);
+
+    setTimeout(() => setIsLoading(false), 100);
 
     return (
         <div className="ItemInfo">

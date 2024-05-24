@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const saveCart = (itemNumber) => {
     let outData;
-    /* if(localStorage.getItem('item') !== null) { */
+    if(localStorage.getItem('item') !== null) {
         outData = localStorage.getItem('item');
         outData = JSON.parse(outData);
         if(outData === null) {
@@ -16,7 +16,7 @@ const saveCart = (itemNumber) => {
         outData = new Set(outData);
         outData = Array.from(outData);
         localStorage.setItem('item', JSON.stringify(outData));
-    /* } */
+    }
 }
 
 const DetailWrap = ({itemData}) => {
@@ -27,7 +27,7 @@ const DetailWrap = ({itemData}) => {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => setIsLoading(false), 50);
+    setTimeout(() => setIsLoading(false), 100);
 
     let dispatch = useDispatch();
 

@@ -1,26 +1,25 @@
+import { useRef } from 'react';
 import './css/Banner.css'
 
 const Banner = () => {
     let slideNum = 0;
     let x = 0;
-    let slideWrap;
+    let slideWrap = useRef(null);
     
     const move = () => {
-        slideWrap = document.getElementById("Slide_wrap");
         slideNum++;
         if(slideNum == 3) {
             slideNum = 0;
         }
-        x = slideWrap.offsetWidth;
-        slideWrap.style.left = -x * slideNum + 'px';
+        x = slideWrap.current.offsetWidth;
+        slideWrap.current.style.left = -x * slideNum + 'px';
     }
 
     let timerId = setInterval(() => move(), 3000);
     
-    
     return (
         <div className='Banner'>
-            <div className='Banner_slide' id='Slide_wrap'>
+            <div className='Banner_slide' id='Slide_wrap' ref={slideWrap}>
                 <div className='Banner_img'>
                     <h1>HELLO, MY LOADED BOARD</h1>
                 </div>
