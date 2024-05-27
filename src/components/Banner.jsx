@@ -11,11 +11,16 @@ const Banner = () => {
         if(slideNum == 3) {
             slideNum = 0;
         }
-        x = slideWrap.current.offsetWidth;
-        slideWrap.current.style.left = -x * slideNum + 'px';
+        console.log("진행중")
+        if(slideWrap.current === null) {
+            x = 0;
+        } else {
+            x = slideWrap.current.offsetWidth;
+            slideWrap.current.style.left = -x * slideNum + 'px';
+        }
     }
-
-    let timerId = setInterval(() => move(), 3000);
+    
+    /* let timerId =  */setInterval(() => move(), 3000);
     
     return (
         <div className='Banner'>
@@ -23,6 +28,7 @@ const Banner = () => {
                 <div className='Banner_img'>
                     <h1>HELLO, MY LOADED BOARD</h1>
                 </div>
+                
                 <div className='Banner_img'>
                     <h1>INTERESING HOBBY</h1>
                 </div>

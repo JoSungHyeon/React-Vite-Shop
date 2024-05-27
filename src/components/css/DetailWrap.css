@@ -34,7 +34,7 @@
 }
 
 .DetailWrap .detail_txt p {
-    font-size: 22px;
+    font-size: 16px;
     margin: 20px 0;
 }
 
@@ -45,4 +45,9 @@
     color: #fff;
     cursor: pointer;
     border: none;
+}
+
+.DetailWrap .detail_txt button.tempBtn {
+    background-color: #777;
+    cursor: default;
 }

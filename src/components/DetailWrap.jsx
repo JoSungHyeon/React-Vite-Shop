@@ -1,6 +1,6 @@
 import './css/DetailWrap.css'
 import { useParams } from 'react-router-dom';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addItem } from '../store/cartSlice';
 import { useDispatch } from 'react-redux';
 
@@ -13,17 +13,35 @@ const saveCart = (itemNumber) => {
             outData = new Array();
         }
         outData.push(itemNumber);
-        outData = new Set(outData);
+        outData = new Set(outData); 
         outData = Array.from(outData);
         localStorage.setItem('item', JSON.stringify(outData));
     }
 }
+
 
 const DetailWrap = ({itemData}) => {
     
     const params = useParams();
 
     let {id} = useParams();
+
+    const [tempItem, setTempItem] = useState(false);
+
+    const moreData = [];
+
+    
+    useEffect(() => {
+        for(var ele of JSON.parse(localStorage.getItem('item'))) {
+            moreData.push(ele.id)
+        }
+
+        if(moreData.includes(Number(params.id))) {
+            setTempItem(true);
+        } else {
+            setTempItem(false);
+        }
+    }, [])
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -41,16 +59,26 @@ const DetailWrap = ({itemData}) => {
                 {
                     isLoading === false
                     ? <div className='detail_txt'>
-                        <h3>{itemData[params.id-1].title}</h3>
-                        <h4>{itemData[params.id-1].content}</h4>
-                        <p>{itemData[params.id-1].price.toLocaleString()} 원</p>
-                        <button onClick={()=>{
-                            dispatch(addItem( {id: id, title: itemData[params.id-1].title, count: 1, price: itemData[params.id-1].price} ));
-                            alert("관심품목에 저장되었습니다.");
-                            saveCart(itemData[params.id - 1]);
-                        }}
-                        >관심품목 추가</button>
-                        </div>
+                            <h3>{itemData[params.id-1].title}</h3>
+                            <h4>Size : {itemData[params.id-1].inch}</h4>
+                            <p>{itemData[params.id-1].content}</p>
+                            <h4>{itemData[params.id-1].price.toLocaleString()} 원</h4>
+                            {   tempItem === false
+                                ? <button onClick={()=>{
+                                    dispatch(addItem( {id: id, title: itemData[params.  id-1].title, count: 1, price: itemData[params.id-1].  price} ));
+                                    saveCart(itemData[params.id - 1]);
+                                    alert("관심품목에 저장되었습니다.");
+                                }}
+                                >관심품목 추가</button>
+                                : <button className='tempBtn'>이미 추가된 상품입니다.</button>
+                            }
+                            {/* <button onClick={()=>{
+                                dispatch(addItem( {id: id, title: itemData[params.  id-1].title, count: 1, price: itemData[params.id-1].  price} ));
+                                saveCart(itemData[params.id - 1]);
+                                alert("관심품목에 저장되었습니다.");
+                            }}
+                            >관심품목 추가</button> */}
+                    </div>
                     : null
                 }
             </div>

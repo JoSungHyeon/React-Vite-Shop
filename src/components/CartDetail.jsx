@@ -32,6 +32,7 @@ const CartDetail = () => {
                     <thead className='CartDetail_thead'>
                         <tr>
                             {/* <th>#</th> */}
+                            <th className='item_img'>상품 이미지</th>
                             <th>상품명</th>
                             <th>가격</th>
                             <th>수량</th>
@@ -41,6 +42,7 @@ const CartDetail = () => {
                         {
                             state.cart.map((a, i)=>
                                 <tr key={i}>
+                                    <td><img src={`https://JoSungHyeon.github.io/shop-data/img/${state.cart[i].id}.png`} /></td>
                                     <td>{state.cart[i].title}</td>
                                     <td
                                         value={state.cart[i].price * state.cart[i].count}
@@ -68,8 +70,10 @@ const CartDetail = () => {
                         }
                     </tbody>
                 </table>
-                <div className='cart_totla_quantity'>총 수량 : {quantity}</div>
-                <div className='cart_total_price'>합계 금액 : {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+                <div className='cart_total_wrap'>
+                    <div className='cart_total_price'>합계 금액 : {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+                    <div className='cart_total_quantity'>총 수량 : {quantity}</div>
+                </div>
             </div>     
         </div>
     )

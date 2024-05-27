@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 80px 0;
     font-size: 1.25rem;
+    min-height: 400px;
 }
 
 .CartDetail h1 {
@@ -12,11 +13,13 @@
 
 .CartDetail_table {
     border: none;
+    position: relative;
 }
 
 .CartDetail_table table {
     width: 100%;
     text-align: center;
+    border-collapse: collapse
 }
 
 .CartDetail_table .CartDetail_thead {
@@ -25,8 +28,16 @@
     color: #fff;
 }
 
-.CartDetail_table .CartDetail_tbody {
-    line-height: 60px;
+.item_img {
+    width: 20%;
+}
+
+.CartDetail_table .CartDetail_tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.CartDetail_table .CartDetail_tbody td img {
+    width: 50%;
 }
 
 .CartDetail_table .CartDetail_count {
@@ -34,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 125px;
 }
 
 .CartDetail_table .CartDetail_count button {
@@ -48,4 +60,13 @@
     color: #111;
     cursor: pointer;
 
+}
+
+.cart_total_wrap {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart_total_wrap div {
+    margin: 20px 0;
 }

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 import './css/ItemInfo.css'
 import { useParams } from 'react-router-dom';
 import Footer from './Footer';
