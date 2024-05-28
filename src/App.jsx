@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from './page/Home'
 import Product from './page/Product'
-import NotFound from './page/NotFound'
 import axios from 'axios'
 import Cart from './page/Cart'
 
