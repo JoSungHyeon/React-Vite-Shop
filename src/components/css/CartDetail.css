@@ -32,6 +32,10 @@
     width: 20%;
 }
 
+.CartDetail_table .CartDetail_tbody {
+    text-align: center;
+}
+
 .CartDetail_table .CartDetail_tbody tr {
   border-bottom: 1px solid #ccc;
 }
@@ -69,4 +73,16 @@
 
 .cart_total_wrap div {
     margin: 20px 0;
+}
+
+.empty_text {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+}
+
+.empty_text td {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }

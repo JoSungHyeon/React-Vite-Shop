@@ -11,13 +11,20 @@ const CartDetail = () => {
 
     let [quantity, setQuantity] = useState(0);
     let [totalPrice, setTotalPrice] = useState(0);
+    let [emptyItem, setEmptyItem] = useState(false);
 
     useEffect(() => {
         state.cart.map((a)=>{
             setTotalPrice(totalPrice += a.price);
             setQuantity(quantity += a.count);
-        })
-    }, [])
+        });
+
+        if(localStorage.getItem('item') === "[]") {
+            setEmptyItem(true);
+        }
+    }, []);
+
+    console.log(emptyItem)
 
     const minusFunction = (i) => {
         setTotalPrice(totalPrice -= state.cart[i].price);
@@ -39,6 +46,11 @@ const CartDetail = () => {
                         </tr>
                      </thead>
                      <tbody className='CartDetail_tbody'>
+                        {
+                            emptyItem === true
+                            ? <tr className='empty_text'><td>현재 관심품목이 없습니다.</td></tr>
+                            : null
+                        }
                         {
                             state.cart.map((a, i)=>
                                 <tr key={i}>
@@ -70,10 +82,14 @@ const CartDetail = () => {
                         }
                     </tbody>
                 </table>
-                <div className='cart_total_wrap'>
-                    <div className='cart_total_price'>합계 금액 : {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
-                    <div className='cart_total_quantity'>총 수량 : {quantity}</div>
-                </div>
+                {
+                    emptyItem === true
+                    ? null
+                    : <div className='cart_total_wrap'>
+                        <div className='cart_total_price'>합계 금액 : {totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+                        <div className='cart_total_quantity'>총 수량 : {quantity}</div>
+                    </div>
+                }
             </div>     
         </div>
     )
