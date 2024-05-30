@@ -30,7 +30,7 @@ const Banner = () => {
                 </div>
                 
                 <div className='Banner_img'>
-                    <h1>INTERESING HOBBY</h1>
+                    <h1>INTERESTING HOBBY</h1>
                 </div>
                 <div className='Banner_img'>
                     <h1>FUN BOARDING</h1>

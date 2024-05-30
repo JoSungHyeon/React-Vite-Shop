@@ -8,7 +8,7 @@ const ItemInfo = ({ itemData }) => {
     const [isLoading, setIsLoading] = useState(true);
 
 
-    setTimeout(() => setIsLoading(false), 100);
+    setTimeout(() => setIsLoading(false), 500);
 
     return (
         <div className="ItemInfo">

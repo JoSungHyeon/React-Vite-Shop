@@ -9,7 +9,7 @@ const Recent = () => {
         setRecentData(JSON.parse(localStorage.getItem('watched')));
     }, [])
 
-    let navigate = useNavigate()
+    let navigate = useNavigate();
 
     return (
         <div className="Recent">
