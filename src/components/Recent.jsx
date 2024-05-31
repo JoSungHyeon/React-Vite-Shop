@@ -3,10 +3,15 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Recent = () => {
-    let [recentData, setRecentData] = useState(JSON.parse(localStorage.getItem('watched')))
+    let [recentData, setRecentData] = useState([]);
+
 
     useEffect(() => {
-        setRecentData(JSON.parse(localStorage.getItem('watched')));
+        if(localStorage.getItem('watched') === null) {
+            setRecentData([]);
+        } else {
+            setRecentData(JSON.parse(localStorage.getItem('watched')));
+        }
     }, [])
 
     let navigate = useNavigate();

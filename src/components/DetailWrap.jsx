@@ -1,5 +1,5 @@
 import './css/DetailWrap.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { addItem } from '../store/cartSlice';
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,7 @@ const saveCart = (itemNumber) => {
             outData = new Array();
         }
         outData.push(itemNumber);
-        outData = new Set(outData); 
+        outData = new Set(outData);
         outData = Array.from(outData);
         localStorage.setItem('item', JSON.stringify(outData));
     }
@@ -28,10 +28,9 @@ const DetailWrap = ({itemData}) => {
 
     const [tempItem, setTempItem] = useState(false);
 
-    const moreData = [];
+    let moreData;
 
-    
-    useEffect(() => {
+    /* useEffect(() => {
         for(var ele of JSON.parse(localStorage.getItem('item'))) {
             moreData.push(ele.id)
         }
@@ -41,14 +40,31 @@ const DetailWrap = ({itemData}) => {
         } else {
             setTempItem(false);
         }
-    }, [])
+    }, []) */
+
+    let findTitle;
+
+    useEffect(() => {
+        if(localStorage.getItem('item') === null) {
+            moreData = [];
+        } else {
+            moreData = JSON.parse(localStorage.getItem('item'));
+        }
+
+        findTitle = moreData.findIndex((item)=>item.id === Number(params.id));
+
+        if(findTitle !== -1) {
+            setTempItem(true);
+        } else{
+            setTempItem(false);
+        }
+    }, []);
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => setIsLoading(false), 100);
+    setTimeout(() => setIsLoading(false), 500);
 
     let dispatch = useDispatch();
-
 
     return (
         <>
@@ -67,6 +83,7 @@ const DetailWrap = ({itemData}) => {
                                 ? <button onClick={()=>{
                                     dispatch(addItem( {id: id, title: itemData[params.  id-1].title, count: 1, price: itemData[params.id-1].  price} ));
                                     saveCart(itemData[params.id - 1]);
+                                    setTempItem(true);
                                     alert("관심품목에 저장되었습니다.");
                                 }}
                                 >관심품목 추가</button>

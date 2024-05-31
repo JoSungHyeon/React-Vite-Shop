@@ -18,11 +18,15 @@ const CartDetail = () => {
             setTotalPrice(totalPrice += a.price);
             setQuantity(quantity += a.count);
         });
-        
-        if(localStorage.getItem('item') === "[]") {
+
+        if(state.cart.length === 0) {
             setEmptyItem(true);
-        }
+        } 
+
     }, []);
+
+
+    console.log(state.cart.length);
 
     const minusFunction = (i) => {
         setTotalPrice(totalPrice -= state.cart[i].price);

@@ -1,8 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export let cartData;
+
+if(localStorage.getItem("item") === null) {
+    cartData = [];
+} else {
+    cartData = JSON.parse(localStorage.getItem("item"));
+}
+
 let cart = createSlice({
     name: 'item',
-    initialState: JSON.parse(localStorage.getItem("item")),
+    initialState: cartData,
     reducers: {
         addCount(state, action) {
             let idNum = state.findIndex((a)=>{ return a.id === action.payload })
