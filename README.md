@@ -1,6 +1,7 @@
 <div align="center">
 <h2>React Vite Shop</h2>
 Vite + React Board Shop 🍀
+<br>
 with. Redux, Axios, LocalStorage
 </div>
 
