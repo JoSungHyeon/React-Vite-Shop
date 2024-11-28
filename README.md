@@ -1,6 +1,7 @@
 <div align="center">
 <h2>React Vite Shop</h2>
-Vite 활용하여 Shop 만들어보기 🍀
+Vite + React Board Shop 🍀
+with. Redux, Axios, LocalStorage
 </div>
 
 <!-- ## 목차 -->
